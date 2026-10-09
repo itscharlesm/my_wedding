@@ -16,6 +16,243 @@
 
     <!-- Developed by GrabCharles -->
 
+    <!-- ===== THE GATE — tap to open the invitation, this also unlocks the audio ===== -->
+    <div id="gate" class="gate">
+        <div class="gate-content">
+            <p class="gate-eyebrow">together with their families</p>
+            <h1 class="gate-title">April Joy<span class="gate-amp">&amp;</span>Emilio</h1>
+            <p class="gate-date">November 14, 2026</p>
+            <button id="enterBtn" class="gate-button" type="button">
+                <span class="gate-button-text">open invitation</span>
+            </button>
+            <p class="gate-hint">(turn your sound on)</p>
+        </div>
+    </div>
+
+    <!-- ===== the app: five panels switched by the bottom nav ===== -->
+    <main class="app">
+
+        <!-- ---------- HOME ---------- -->
+        <section id="panel-home" class="panel active">
+            <div class="hero">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <p class="hero-kicker">The Wedding Of</p>
+                    <h1 class="hero-names">
+                        <span>April Joy</span>
+                        <span class="hero-divider" aria-hidden="true">
+                            <i></i><svg viewBox="0 0 24 24" class="ring-icon"><circle cx="9" cy="14" r="6"
+                                    fill="none" stroke="currentColor" stroke-width="1.6" />
+                                <circle cx="15" cy="14" r="6" fill="none" stroke="currentColor"
+                                    stroke-width="1.6" />
+                            </svg><i></i>
+                        </span>
+                        <span>Emilio</span>
+                    </h1>
+                    <p class="hero-sub">are getting married</p>
+
+                    <div class="hero-datebox">
+                        <p class="hero-date">November 14, 2026</p>
+                        <p class="hero-time">2:00 in the afternoon</p>
+                    </div>
+
+                    <div class="countdown" id="countdown">
+                        <div class="countdown-cell">
+                            <span class="countdown-num" id="cdDays">00</span>
+                            <span class="countdown-label">days</span>
+                        </div>
+                        <div class="countdown-cell">
+                            <span class="countdown-num" id="cdHours">00</span>
+                            <span class="countdown-label">hours</span>
+                        </div>
+                        <div class="countdown-cell">
+                            <span class="countdown-num" id="cdMinutes">00</span>
+                            <span class="countdown-label">minutes</span>
+                        </div>
+                        <div class="countdown-cell">
+                            <span class="countdown-num" id="cdSeconds">00</span>
+                            <span class="countdown-label">seconds</span>
+                        </div>
+                    </div>
+
+                    <p class="hero-tagline">We can&rsquo;t wait to celebrate this day with you</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ---------- CALENDAR ---------- -->
+        <section id="panel-calendar" class="panel">
+            <div class="panel-inner">
+                <p class="panel-kicker">mark your calendar</p>
+                <h2 class="panel-title">Save the Date</h2>
+
+                <div class="calendar-card">
+                    <p class="calendar-month" id="calendarMonth">November 2026</p>
+                    <div class="calendar-weekdays">
+                        <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+                    </div>
+                    <div class="calendar-grid" id="calendarGrid"></div>
+                </div>
+
+                <div class="info-card">
+                    <p class="info-card-date">November 14, 2026</p>
+                    <p class="info-card-sub">Saturday &middot; 2:00 PM</p>
+                    <button id="addToCalendarBtn" class="pill-button" type="button">add to my calendar</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ---------- LOCATION ---------- -->
+        <section id="panel-location" class="panel">
+            <div class="panel-inner">
+                <p class="panel-kicker">where to find us</p>
+                <h2 class="panel-title">Venue Details</h2>
+
+                <div class="venue-card">
+                    <p class="venue-label">Ceremony</p>
+                    <p class="venue-name">Our Mother of Perpetual Help Parish</p>
+                    <p class="venue-sub">(Redemptorist Church)</p>
+                    <div class="venue-map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.2916789503356!2d125.6097552!3d7.0921493999999985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32f96c3a2ff92865%3A0xa3b7b6de404fd11b!2sOur%20Mother%20of%20Perpetual%20Help%20Parish%20-%20Redemptorist%20Church!5e0!3m2!1sen!2sph!4v1791546795439!5m2!1sen!2sph"
+                            width="600" height="450" style="border:0;" allowfullscreen loading="lazy"
+                            referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                    </div>
+                    <a class="venue-directions"
+                        href="https://www.google.com/maps/search/?api=1&query=Our+Mother+of+Perpetual+Help+Parish+Redemptorist+Church+Davao"
+                        target="_blank" rel="noopener">get directions</a>
+                </div>
+
+                <div class="venue-card">
+                    <p class="venue-label">Reception</p>
+                    <p class="venue-name">Ladislawa Clubhouse</p>
+                    <p class="venue-sub">Buhangin, Davao City</p>
+                    <div class="venue-map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.2509000371756!2d125.6043394747588!3d7.096890892906335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32f96cff051dd9af%3A0xe1566d10d2b8d2b2!2sLadislawa%20Clubhouse!5e0!3m2!1sen!2sph!4v1791546891332!5m2!1sen!2sph"
+                            width="600" height="450" style="border:0;" allowfullscreen loading="lazy"
+                            referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                    </div>
+                    <a class="venue-directions"
+                        href="https://www.google.com/maps/search/?api=1&query=Ladislawa+Clubhouse+Buhangin+Davao+City"
+                        target="_blank" rel="noopener">get directions</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ---------- ATTIRE ---------- -->
+        <section id="panel-cloth" class="panel">
+            <div class="panel-inner">
+                <p class="panel-kicker">what to wear</p>
+                <h2 class="panel-title">Attire Guide</h2>
+                <p class="attire-intro">We would love to see you in your formal attire. We encourage you to dress
+                    according to our wedding d&eacute;cor.</p>
+
+                <div class="palette-row" aria-hidden="true">
+                    <span class="swatch" style="--c:#f4efe3"></span>
+                    <span class="swatch" style="--c:#cdd8b8"></span>
+                    <span class="swatch" style="--c:#a7bb86"></span>
+                    <span class="swatch" style="--c:#7f9960"></span>
+                    <span class="swatch" style="--c:#56713c"></span>
+                </div>
+
+                <div class="attire-card">
+                    <p class="attire-group-title">Principal Sponsors</p>
+                    <div class="attire-row">
+                        <div class="attire-col">
+                            <span class="attire-icon" aria-hidden="true">&#128081;</span>
+                            <p class="attire-role">Ladies</p>
+                            <p class="attire-desc">Formal Dress</p>
+                        </div>
+                        <div class="attire-col">
+                            <span class="attire-icon" aria-hidden="true">&#127381;</span>
+                            <p class="attire-role">Gentleman</p>
+                            <p class="attire-desc">Barong / Long Sleeves &amp; Slacks</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="attire-card">
+                    <p class="attire-group-title">Wedding Guests</p>
+                    <div class="attire-row">
+                        <div class="attire-col">
+                            <span class="attire-icon" aria-hidden="true">&#128084;</span>
+                            <p class="attire-role">Ladies</p>
+                            <p class="attire-desc">Formal Dresses</p>
+                        </div>
+                        <div class="attire-col">
+                            <span class="attire-icon" aria-hidden="true">&#128084;</span>
+                            <p class="attire-role">Gentleman</p>
+                            <p class="attire-desc">Formal Long / Short Sleeves &amp; Slacks</p>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="attire-note">In shades of green &amp; cream, please &mdash; and kindly avoid white.</p>
+            </div>
+        </section>
+
+        <!-- ---------- MESSAGE ---------- -->
+        <section id="panel-message" class="panel">
+            <div class="panel-inner panel-inner-center">
+                <p class="panel-kicker">need to reach us?</p>
+                <h2 class="panel-title">Send a Message</h2>
+                <p class="message-copy">If you have any questions or need further clarification, feel free to
+                    message us directly &mdash; we&rsquo;d love to hear from you.</p>
+
+                <a class="pill-button messenger-button"
+                    href="https://www.messenger.com/e2ee/t/1182245603630546" target="_blank" rel="noopener">
+                    message us on messenger
+                </a>
+
+                <a class="facebook-link" href="https://www.facebook.com/prilee26" target="_blank" rel="noopener">
+                    visit our facebook
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== bottom nav ===== -->
+    <nav class="bottom-nav" id="bottomNav">
+        <button class="nav-btn active" data-target="home" type="button" aria-label="Home">
+            <svg viewBox="0 0 24 24">
+                <path d="M4 11.5 12 4l8 7.5" fill="none" stroke="currentColor" stroke-width="1.7"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M6.5 10v9h11v-9" fill="none" stroke="currentColor" stroke-width="1.7"
+                    stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </button>
+        <button class="nav-btn" data-target="calendar" type="button" aria-label="Calendar">
+            <svg viewBox="0 0 24 24">
+                <rect x="4" y="5.5" width="16" height="14.5" rx="2" fill="none" stroke="currentColor"
+                    stroke-width="1.7" />
+                <path d="M4 9.5h16M8 3.5v4M16 3.5v4" fill="none" stroke="currentColor" stroke-width="1.7"
+                    stroke-linecap="round" />
+            </svg>
+        </button>
+        <button class="nav-btn" data-target="location" type="button" aria-label="Location">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z" fill="none"
+                    stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" />
+                <circle cx="12" cy="9.3" r="2.4" fill="none" stroke="currentColor" stroke-width="1.7" />
+            </svg>
+        </button>
+        <button class="nav-btn" data-target="cloth" type="button" aria-label="Attire">
+            <svg viewBox="0 0 24 24">
+                <path
+                    d="M9 4 7 6 3 8.5 5.5 12 7 11v9h10v-9l1.5 1L21 8.5 17 6l-2-2-1.8 1.8a2 2 0 0 1-2.4 0L9 4Z"
+                    fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
+            </svg>
+        </button>
+        <button class="nav-btn" data-target="message" type="button" aria-label="Message">
+            <svg viewBox="0 0 24 24">
+                <path d="M4 5.5h16v10H9.5L5 19v-3.5H4Z" fill="none" stroke="currentColor" stroke-width="1.7"
+                    stroke-linejoin="round" />
+            </svg>
+        </button>
+    </nav>
+
     <div class="sound-toggle" id="soundToggle" title="mute/unmute">
         <span id="soundIcon">&#9834;</span>
     </div>
