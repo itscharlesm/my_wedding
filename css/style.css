@@ -698,3 +698,11 @@ a {
         font-size: 1.1rem;
     }
 }
+
+.calendar-hint {
+    margin-top: 0.8rem;
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    color: var(--ink-soft);
+    opacity: 0.85;
+}

@@ -163,3 +163,75 @@ document.getElementById('addToCalendarBtn').addEventListener('click', () => {
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
 });
+
+
+/* ==========================================================================
+   4. Add to calendar
+      - normal browsers: download a .ics file
+      - Messenger / Facebook / Instagram in-app browsers: they can't download
+        blob files (they show the raw text), so open Google Calendar instead
+   ========================================================================== */
+
+(function setupAddToCalendar() {
+    const btn = document.getElementById('addToCalendarBtn');
+    const hint = document.getElementById('calendarHint');
+
+    const inAppBrowser = /FBAN|FBAV|FB_IAB|FBIOS|Messenger|Instagram/i.test(navigator.userAgent);
+
+    function toICSDate(d) {
+        return d.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+    }
+
+    const start = new Date(CONFIG.weddingISO);
+    const end = new Date(start.getTime() + 4 * 60 * 60 * 1000); // 4-hour block
+    const description = "We can't wait to celebrate with you!";
+
+    function openGoogleCalendar() {
+        const params = new URLSearchParams({
+            action: 'TEMPLATE',
+            text: CONFIG.eventTitle,
+            dates: `${toICSDate(start)}/${toICSDate(end)}`,
+            details: description,
+            location: CONFIG.eventLocation
+        });
+        window.location.href = 'https://calendar.google.com/calendar/render?' + params.toString();
+    }
+
+    function downloadICS() {
+        const ics = [
+            'BEGIN:VCALENDAR',
+            'VERSION:2.0',
+            'PRODID:-//Wedding//EN',
+            'BEGIN:VEVENT',
+            `UID:wedding-${CONFIG.weddingISO}@invitation`,
+            `DTSTAMP:${toICSDate(new Date())}`,
+            `DTSTART:${toICSDate(start)}`,
+            `DTEND:${toICSDate(end)}`,
+            `SUMMARY:${CONFIG.eventTitle}`,
+            `LOCATION:${CONFIG.eventLocation}`,
+            `DESCRIPTION:${description.replace(/'/g, "\\'")}`,
+            'END:VEVENT',
+            'END:VCALENDAR'
+        ].join('\r\n');
+
+        const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'wedding.ics';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+    }
+
+    if (inAppBrowser && hint) hint.hidden = false;
+
+    btn.addEventListener('click', () => {
+        if (inAppBrowser) {
+            openGoogleCalendar();
+        } else {
+            downloadICS();
+        }
+    });
+})();
